@@ -1,4 +1,4 @@
-FROM test:latest
+FROM ub-rsr:latest
 RUN apt update
 RUN apt upgrade -y
 RUN apt install -y xfe thunar mousepad ibus ibus-hangul dbus dbus-x11 rxvt-unicode xfce4-terminal

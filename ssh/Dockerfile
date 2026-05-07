@@ -1,4 +1,4 @@
-FROM test:latest
+FROM ub-rsr:latest
 USER root
 RUN apt update
 RUN apt upgrade -y

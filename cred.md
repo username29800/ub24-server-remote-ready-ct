@@ -4,7 +4,13 @@
 
 ## appendix: tutorial
 - run 'sh build.sh' to build images
-   - uncomment dev(devtools) or gui(x11 ready) line to add the functionality
+   - uncomment gui(x11 ready) line to add the functionality
+
+- usage: sh build.sh \[name\] \[base image version\]
+
+```bash
+sh build.sh ub-rsr 24.04
+```
 
 ## appendix: image types
 ### 1. base
