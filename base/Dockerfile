@@ -1,7 +1,7 @@
-FROM docker.io/library/ubuntu:24.04
+FROM docker.io/library/ubuntu:26.04
 RUN apt update
 RUN apt upgrade -y
-RUN apt install -y vim git iproute2 sudo unzip mc
+RUN apt install -y vim git wget curl iproute2 sudo unzip gzip lzip mc
 RUN useradd -G sudo -s /usr/bin/bash -p "$(openssl passwd -6 'vnccntghy110')" user
 USER user
 WORKDIR /home/user
