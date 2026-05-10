@@ -1,4 +1,5 @@
 FROM ub-rsr5:latest
+USER root
 RUN apt update
 RUN apt upgrade -y
 RUN apt install -y xfe thunar mousepad ibus ibus-hangul dbus dbus-x11 rxvt-unicode xfce4-terminal
@@ -10,6 +11,5 @@ RUN unzip D2Coding-Ver1.3.2*.zip
 RUN mkdir -p /home/user/.fonts
 RUN cp -a D2CodingAll/*.ttc ~/.fonts
 RUN fc-cache
-RUN exit
 USER root
 CMD ["/usr/sbin/sshd", "-D"]

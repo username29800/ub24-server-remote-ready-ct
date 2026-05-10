@@ -1,4 +1,5 @@
 FROM docker.io/library/ubuntu:26.04
+USER root
 RUN apt update
 RUN apt upgrade -y
 RUN apt install -y vim git wget curl iproute2 sudo unzip gzip lzip mc
