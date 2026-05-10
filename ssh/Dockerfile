@@ -1,4 +1,4 @@
-FROM ub-rsr-rc:latest
+FROM ub-rsr5:latest
 USER root
 RUN apt update
 RUN apt upgrade -y

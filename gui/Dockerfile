@@ -1,4 +1,4 @@
-FROM ub-rsr-rc:latest
+FROM ub-rsr5:latest
 RUN apt update
 RUN apt upgrade -y
 RUN apt install -y xfe thunar mousepad ibus ibus-hangul dbus dbus-x11 rxvt-unicode xfce4-terminal
