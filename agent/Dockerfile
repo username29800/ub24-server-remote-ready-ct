@@ -1,9 +1,15 @@
 FROM ub-rsr5:latest
 USER root
+WORKDIR /root
 RUN apt update
 RUN apt upgrade -y
-RUN apt install -y zstd nodejs npm
+RUN apt install -y zstd
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash && \
+    [ -s ".nvm/nvm.sh" ] && \
+    \. .nvm/nvm.sh && \
+    nvm install 24
 RUN npm i -g opencode-ai
+RUN npm i -g openclaw
 USER user
 WORKDIR /home/user
 RUN mkdir -p .config/opencode && \
