@@ -1,17 +1,17 @@
-FROM ub-rsr5:latest
+FROM agent-test:latest
 USER root
-WORKDIR /root
 RUN apt update
 RUN apt upgrade -y
 RUN apt install -y zstd
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash && \
-    [ -s ".nvm/nvm.sh" ] && \
-    \. .nvm/nvm.sh && \
-    nvm install 24
-RUN npm i -g opencode-ai
-RUN npm i -g openclaw
 USER user
 WORKDIR /home/user
+RUN git clone https://github.com/nvm-sh/nvm .nvm
+WORKDIR /home/user/.nvm
+RUN bash install.sh
+WORKDIR /home/user
+RUN bash -lc '. /home/user/.nvm/nvm.sh && nvm install 24'
+RUN bash -lc 'npm i -g opencode-ai'
+USER user
 RUN mkdir -p .config/opencode && \
     echo '{' >> .config/opencode/opencode.json && \
     echo '  "$schema": "https://opencode.ai/config.json",' >> .config/opencode/opencode.json && \
@@ -30,5 +30,6 @@ RUN mkdir -p .config/opencode && \
     echo '    }' >> .config/opencode/opencode.json && \
     echo '  }' >> .config/opencode/opencode.json && \
     echo '}' >> .config/opencode/opencode.json
+RUN rm -f ~/.bash_history
 USER root
 CMD ["/usr/sbin/sshd", "-D"]

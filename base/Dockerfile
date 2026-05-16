@@ -1,4 +1,4 @@
-FROM docker.io/library/ubuntu:26.04
+FROM docker.io/library/ubuntu:24.04
 USER root
 RUN apt update
 RUN apt upgrade -y

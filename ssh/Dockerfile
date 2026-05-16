@@ -1,4 +1,4 @@
-FROM ub-rsr5:latest
+FROM agent-test:latest
 USER root
 RUN apt update
 RUN apt upgrade -y
