@@ -9,7 +9,7 @@ WORKDIR /home/user
 RUN git clone https://github.com/username29800/ssh-dotwell
 WORKDIR /home/user/ssh-dotwell
 RUN . ./src.sh &&\
-    chmod 744 ./cfgenv.sh
+    chmod 744 ./cfgenv.sh &&\
     ./cfgenv.sh
 WORKDIR /home/user
 RUN exit
