@@ -1,8 +1,8 @@
-FROM ub-rsr5:latest
+FROM d-rsrc:latest
 USER root
 RUN apt update
 RUN apt upgrade -y
-RUN apt install -y xfe thunar mousepad ibus ibus-hangul dbus dbus-x11 rxvt-unicode xfce4-terminal tigervnc-standalone-server rofi openbox
+RUN apt install -y xfe thunar mousepad ibus ibus-hangul dbus dbus-x11 rxvt-unicode xfce4-terminal tigervnc-standalone-server rofi openbox firefox-esr
 USER user
 WORKDIR /home/user
 RUN git clone https://github.com/naver/d2codingfont
