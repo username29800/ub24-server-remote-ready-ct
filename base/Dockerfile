@@ -7,7 +7,7 @@ RUN useradd -G sudo -s /usr/bin/bash -p "$(openssl passwd -6 'vnccntghy110')" us
 USER user
 WORKDIR /home/user
 RUN git clone https://gitlab.com/username29800/ssh-dew
-WORKDIR /home/user/ssh-dotwell
+WORKDIR /home/user/ssh-dew
 RUN . ./src.sh &&\
     chmod 744 ./cfgenv.sh &&\
     ./cfgenv.sh
