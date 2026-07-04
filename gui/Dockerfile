@@ -4,9 +4,13 @@ RUN apt update
 RUN apt upgrade -y
 RUN apt install -y xfe thunar mousepad ibus ibus-hangul dbus dbus-x11 rxvt-unicode xfce4-terminal tigervnc-standalone-server tigervnc-viewer rofi openbox firefox-esr geany codeblocks vim-gtk3 plank xcompmgr
 USER user
-RUN echo xcompmgr \& > startup
+RUN echo pkill xcompmgr > startup
+RUN echo pkill plank >> startup
+RUN echo xcompmgr \& >> startup
 RUN echo plank \& >> startup
 RUN echo plank --preferences >> startup
+RUN echo ibus-daemon -rxd >> startup
+RUN echo ibus-setup \& >> startup
 RUN chmod 0755 startup
 WORKDIR /home/user
 RUN git clone https://github.com/naver/d2codingfont
