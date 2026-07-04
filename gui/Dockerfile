@@ -16,7 +16,6 @@ RUN echo plank --preferences >> startup
 RUN echo ibus-daemon -rxd >> startup
 RUN echo ibus-setup \& >> startup
 RUN echo plank --preferences > settings
-RUN echo ibus-daemon -rxd >> settings
 RUN echo ibus-setup \& >> settings
 RUN chmod 0755 startup refresh settings
 WORKDIR /home/user
