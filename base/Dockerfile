@@ -8,11 +8,9 @@ RUN locale-gen
 RUN useradd -G sudo -s /usr/bin/bash -p "$(openssl passwd -6 'vnccntghy110')" user
 USER user
 WORKDIR /home/user
-RUN git clone https://gitlab.com/username29800/ssh-dew
-WORKDIR /home/user/ssh-dew
-RUN . ./src.sh &&\
-    chmod 744 ./cfgenv.sh &&\
-    ./cfgenv.sh
+RUN git clone https://gitlab.com/username29800/dnt2aw
+WORKDIR /home/user/dnt2aw
+RUN sh cfgenv.sh /home/user
 WORKDIR /home/user
 RUN exit
 CMD ["/usr/bin/bash", "-l"]
