@@ -17,7 +17,8 @@ RUN echo ibus-daemon -rxd >> startup
 RUN echo ibus-setup \& >> startup
 RUN echo plank --preferences > settings
 RUN echo ibus-setup \& >> settings
-RUN chmod 0755 startup refresh settings
+RUN echo xrandr --output VNC-0 --mode \$1 > ascreen
+RUN chmod 0755 startup refresh settings ascreen
 WORKDIR /home/user
 RUN git clone https://github.com/naver/d2codingfont
 WORKDIR /home/user/d2codingfont
