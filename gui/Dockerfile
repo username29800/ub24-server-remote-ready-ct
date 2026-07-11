@@ -8,12 +8,10 @@ RUN echo pkill xcompmgr > refresh
 RUN echo pkill plank >> refresh
 RUN echo xcompmgr \& >> refresh
 RUN echo plank \& >> refresh
-RUN echo pkill xcompmgr > startup
-RUN echo pkill plank >> startup
+RUN echo ibus-daemon -rxd > startup
 RUN echo xcompmgr \& >> startup
 RUN echo plank \& >> startup
 RUN echo plank --preferences >> startup
-RUN echo ibus-daemon -rxd >> startup
 RUN echo ibus-setup \& >> startup
 RUN echo plank --preferences > settings
 RUN echo ibus-setup \& >> settings
