@@ -2,7 +2,7 @@ FROM d-rsrc:latest
 USER root
 RUN apt update
 RUN apt upgrade -y
-RUN apt install -y xfe thunar mousepad ibus ibus-hangul dbus dbus-x11 rxvt-unicode xfce4-terminal tigervnc-standalone-server tigervnc-viewer rofi openbox firefox-esr geany codeblocks vim-gtk3 plank xcompmgr fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-color-emoji fonts-nanum
+RUN apt install -y xfe caja pluma ibus ibus-hangul dbus dbus-x11 rxvt-unicode xfce4-terminal tigervnc-standalone-server tigervnc-viewer rofi openbox firefox-esr emacs gnome-builder vim-gtk3 plank xcompmgr fonts-noto-cjk fonts-noto-cjk-extra fonts-noto-color-emoji fonts-nanum
 USER user
 RUN echo pkill xcompmgr > refresh
 RUN echo pkill plank >> refresh
@@ -18,6 +18,7 @@ RUN echo ibus-setup \& >> settings
 RUN echo xrandr --output VNC-0 --mode \$1 > ascreen
 RUN chmod 0755 startup refresh settings ascreen
 WORKDIR /home/user
+RUN git clone https://github.com/syl20bnr/spacemacs .emacs.d
 RUN git clone https://github.com/naver/d2codingfont
 WORKDIR /home/user/d2codingfont
 RUN unzip D2Coding-Ver1.3.2*.zip
