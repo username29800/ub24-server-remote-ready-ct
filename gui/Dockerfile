@@ -22,8 +22,8 @@ RUN echo plank --preferences > settings
 RUN echo ibus-setup \& >> settings
 RUN echo xrandr --output VNC-0 --mode \$1 > ascreen
 RUN chmod 0755 startup refresh settings ascreen
-RUN sed -i '$s,^,#,' xstartup
-RUN sed -i '$axfce4-session' xstartup
+RUN sed -i '$s,^,#,' .config/tigervnc/xstartup
+RUN sed -i '$axfce4-session' .config/tigervnc/xstartup
 RUN git clone https://github.com/syl20bnr/spacemacs .emacs.d
 RUN git clone https://github.com/naver/d2codingfont
 WORKDIR /home/user/d2codingfont
