@@ -7,6 +7,7 @@ RUN apt install -y ibus ibus-hangul dbus dbus-x11 rxvt-unicode xfce4-terminal ti
 RUN git clone https://github.com/username29800/ub24-server-remote-ready-ct nedcat
 WORKDIR nedcat/segments
 RUN sh onestop-apps.sh
+RUN chown -R user ..
 USER user
 WORKDIR /home/user
 RUN echo pkill xcompmgr > refresh
