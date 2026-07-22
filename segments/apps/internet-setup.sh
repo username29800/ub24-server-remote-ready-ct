@@ -21,26 +21,22 @@ mkdir data/Firefox data/Thunderbird data/Discord data/Seamonkey
 curl -o archives/Firefox.tar.xz "$arc_firefox"
 tar --overwrite -C data/Firefox -xf archives/Firefox.tar.xz
 chmod 0755 data/Firefox/*/firefox
-echo "$dpath/Firefox/*/firefox" > menu/Firefox
-chmod 0755 menu/Firefox
+ln -sf "$dpath"/Firefox/*/firefox menu/Firefox
 
 # nedcat Application segment - Thunderbird installer
 curl -o archives/Thunderbird.tar.xz "$arc_thunder"
 tar --overwrite -C data/Thunderbird -xf archives/Thunderbird.tar.xz
 chmod 0755 data/Thunderbird/*/thunderbird
-echo "$dpath/Thunderbird/*/thunderbird" > menu/Thunderbird
-chmod 0755 menu/Thunderbird
+ln -sf "$dpath"/Thunderbird/*/thunderbird menu/Thunderbird
 
 # nedcat Application segment - Discord installer
 curl -o archives/Discord.tar.gz "$arc_discord"
 tar --overwrite -C data/Discord -xf archives/Discord.tar.gz
 chmod 0755 data/Discord/*/discord
-echo "$dpath/Discord/*/discord" > menu/Discord
-chmod 0755 menu/Discord
+ln -sf "$dpath"/Discord/*/discord menu/Discord
 
 # nedcat Application segment - SeaMonkey installer
 curl -o archives/Seamonkey.tar.bz2 "$arc_seamon"
 tar --overwrite -C data/Seamonkey -xf archives/Seamonkey.tar.bz2
 chmod 0755 data/Seamonkey/*/seamonkey
-echo "$dpath/Seamonkey/*/seamonkey" > menu/Seamonkey
-chmod 0755 menu/Seamonkey
+ln -sf "$dpath"/Seamonkey/*/seamonkey menu/Seamonkey
