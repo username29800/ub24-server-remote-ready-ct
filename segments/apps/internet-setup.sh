@@ -11,7 +11,7 @@ arc_seamon='https://archive.seamonkey-project.org/releases/2.53.23/linux-x86_64/
 
 # common configurations
 cpath="`cd "$1" && pwd`"
-dpath="${cpath}/nedcat.d/data"
+dpath="${cpath}/nedcat.d/Applications/data"
 cd "${cpath}"'/nedcat.d/Applications'
 
 # segment-specific prerequisites
