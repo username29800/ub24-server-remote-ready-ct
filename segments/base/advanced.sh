@@ -10,6 +10,7 @@ apt install -y ripgrep eza mc
 apt install -y emacs-common
 # 1.3. advanced - administration
 apt install -y iproute2 fastfetch tmux screen
+apt install -y iproute2 neofetch tmux screen
 # 1.4. advanced - shell and scripting
 apt install -y zsh python3 gawk perl
 
